@@ -7,8 +7,8 @@ function App() {
   /* En dehors des () du return on code en Javascript normal */
   const auteur = "EmmanuelDev";
   const message = "Coucou, React c'est super cool!";
-  const sayHello = () => {
-            console.log("coucou");
+  const sayHello = (username) => {
+            console.log(`coucou ${username}`);
         }
 
   return (
@@ -17,7 +17,7 @@ function App() {
       <h1>Hello React test</h1>
       <CreateTweet />
       <TweetList auteur={auteur} message={message} />
-      <button onClick={sayHello}>Click</button>
+      <button onClick={() => sayHello("EmmanuelDev")}>Click</button>
     </div>
   );
 };
