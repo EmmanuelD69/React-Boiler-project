@@ -5,19 +5,21 @@ import CreateTweet from "./components/CreateTweet"
 
 function App() {
   /* En dehors des () du return on code en Javascript normal */
+  let name = "React"
   const auteur = "EmmanuelDev";
   const message = "Coucou, React c'est super cool!";
-  const sayHello = (username) => {
-            console.log(`coucou ${username}`);
+  const sayHello = (e) => {
+            name = "World";
+            console.log(name);
         }
 
   return (
     /* Entre les () du return on code en JSX */
     <div>
-      <h1>Hello React test</h1>
+      <h1>Hello {name}</h1>
       <CreateTweet />
       <TweetList auteur={auteur} message={message} />
-      <button onClick={() => sayHello("EmmanuelDev")}>Click</button>
+      <button onClick={sayHello}>Click</button>
     </div>
   );
 };
